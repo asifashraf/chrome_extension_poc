@@ -22,7 +22,9 @@ function loadSearch() {
       },
       (injectionResults) => {
         for (const frameResult of injectionResults)
-          print("Frame Title: " + frameResult.result);
+          if (frameResult.frameId === 0) {
+            print("Frame Title: " + frameResult.result);
+          }
       }
     );
   });
